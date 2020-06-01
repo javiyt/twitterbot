@@ -2,7 +2,7 @@ pull_request_rules:
   - name: Automatic merge on approval
     conditions:
       - "#approved-reviews-by>=1"
-      - status-success=Travis CI - Pull Request
+      - status-success=continuous-integration/travis-ci/pr
       - base=master
     actions:
       merge:
@@ -11,7 +11,7 @@ pull_request_rules:
   - name: automatic merge if author is javiyt
     conditions:
         - author=javiyt
-        - status-success=Travis CI - Pull Request
+        - status-success=continuous-integration/travis-ci/pr
         - base=master
     actions:
       merge:
@@ -20,7 +20,7 @@ pull_request_rules:
   - name: automatic merge for Dependabot pull requests
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
-      - status-success=Travis CI - Pull Request
+      - status-success=continuous-integration/travis-ci/pr
       - base=master
     actions:
       merge:
